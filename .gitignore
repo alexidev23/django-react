@@ -1,0 +1,44 @@
+# Entornos virtuales
+venv/
+env/
+
+# Archivos generados por Python
+*.pyc
+*.pyo
+__pycache__
+
+# Archivos de configuración
+*.sqlite3
+*.pyc
+*.pyo
+*.pyc
+*.pyo
+*.log
+
+# Directorio de archivos estáticos
+/staticfiles/
+
+# Directorio de archivos media
+/media/
+
+# Dependencias gestionadas por pip
+/.venv/
+pip-selfcheck.json
+
+# Directorios específicos de IDE
+.idea/
+.vscode/
+
+# Archivos de compilación
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyc
+__pycache__/
+*$py.class
+
+# Otros archivos generados
+.DS_Store
+Thumbs.db
