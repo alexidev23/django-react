@@ -16,12 +16,13 @@ export function TaskList () {
 
   return (
     <>
-      <div className='border border-black py-2 px-4 flex flex-col gap-2 w-[600px]'>
+      <div className='border border-black py-2 px-4 flex flex-col gap-2 w-[600px] rounded-xl'>
         {task.map(task => (
           <TaskCard
             key={task.id}
+            id={task.id}
             title={task.title}
-            description={task.description}
+            description={task.descripcion}
             finished={task.finish}
           />
         ))}
