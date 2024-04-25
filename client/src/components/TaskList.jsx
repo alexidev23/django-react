@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getAllTask } from '../api/task.api'
+import { deleteTask, getAllTask } from '../api/task.api'
 import { TaskCard } from './TaskCard'
+// import { useNavigate } from 'react-router-dom'
 
 export function TaskList () {
   const [task, setTask] = useState([])
+  // const navigate = useNavigate()
 
   useEffect(() => {
     async function loadTask () {
@@ -14,17 +16,31 @@ export function TaskList () {
     loadTask()
   }, [])
 
+  const handleDeleteTask = async (taskId) => {
+    const accepted = window.confirm('¿Estás seguro?')
+    if (accepted) {
+      await deleteTask(taskId)
+      setTask(prevTasks => prevTasks.filter(task => task.id !== taskId))
+    }
+  }
+
   return (
     <>
-      <div className='border border-black py-2 px-4 flex flex-col gap-2 w-[600px] rounded-xl'>
+      <div className='py-2 flex flex-col gap-2 w-full px-4'>
         {task.map(task => (
-          <TaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.descripcion}
-            finished={task.finish}
-          />
+          <div key={task.id} className='flex items-center justify-between border-b w-full'>
+            <TaskCard
+              id={task.id}
+              title={task.title}
+              finished={task.finish}
+            />
+            <button
+              className='pr-2'
+              onClick={() => handleDeleteTask(task.id)}
+            >
+              ❌
+            </button>
+          </div>
         ))}
       </div>
     </>

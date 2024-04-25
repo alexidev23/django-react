@@ -1,18 +1,19 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { TaskPage } from './pages/TaskPage'
 import { TaskFormPage } from './pages/TaskFormPage'
-import { Navbar } from './components/Navbar'
+import { Toaster } from 'react-hot-toast'
 
 function App () {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path='/' element={<Navigate to='/task' />} />
-        <Route path='/task' element={<TaskPage />} />
+        <Route path='/' element={<TaskPage />} />
         <Route path='/taskForm' element={<TaskFormPage />} />
         <Route path='/task/:id' element={<TaskFormPage />} />
       </Routes>
+      <Toaster
+        position='bottom-right'
+      />
     </BrowserRouter>
   )
 }

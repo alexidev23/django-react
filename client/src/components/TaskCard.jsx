@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom'
+import '../index.css'
 
-export function TaskCard ({ id, title, description, finished }) {
+export function TaskCard ({ id, title, finished }) {
   const navigate = useNavigate()
 
   return (
     <div
-      className={`border border-gray-500 py-2 px-4 rounded-lg ${finished ? 'text-red-500' : 'text-green-600'}`}
+      className='py-2 pl-2 pr-3 flex items-center justify-center'
       onClick={() => {
         navigate(`/task/${id}`)
       }}
     >
-      <p className='font-semibold text-xl'>{title}</p>
-      <p className='text-sm text-black'>{description}</p>
+      <p className={`font-semibold text-xl text-balance ${finished ? 'tachado' : 'text-white'}`}>{title}</p>
     </div>
   )
 }

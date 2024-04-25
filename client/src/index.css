@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tachado {
+  text-decoration: line-through;
+  color: rgb(105, 104, 104);
+}
