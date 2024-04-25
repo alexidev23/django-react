@@ -26,7 +26,7 @@ export function TaskList () {
 
   return (
     <>
-      <div className='py-2 flex flex-col gap-2 w-full px-4'>
+      <div className='py-2 flex flex-col gap-2 w-full px-4 sm:w-[600px]'>
         {task.map(task => (
           <div key={task.id} className='flex items-center justify-between border-b w-full'>
             <TaskCard

@@ -11,7 +11,7 @@ export function TaskCard ({ id, title, finished }) {
         navigate(`/task/${id}`)
       }}
     >
-      <p className={`font-semibold text-xl text-balance ${finished ? 'tachado' : 'text-white'}`}>{title}</p>
+      <p className={`font-semibold text-xl text-balance sm:text-xl ${finished ? 'tachado' : 'text-white'}`}>{title}</p>
     </div>
   )
 }
