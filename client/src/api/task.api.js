@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const taskApi = axios.create({
-  baseURL: 'http://localhost:8000/tareas/api/v1/tareas/'
+  // baseURL: 'http://localhost:8000/tareas/api/v1/tareas/'
+  baseURL: 'https://django-react-app.onrender.com/tareas/api/v1/tareas/'
 })
 
 // GET ALL TASK
